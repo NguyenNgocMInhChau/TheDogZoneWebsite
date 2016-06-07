@@ -1,0 +1,100 @@
+{
+  "breeds" : {
+    "01" : {
+      "character" : {
+        "01" : {
+          "name" : "Adaptability",
+          "rating" : 4
+        },
+        "02" : {
+          "name" : "Exercise Needs",
+          "rating" : 4
+        },
+        "03" : {
+          "name" : "Friendliness",
+          "rating" : 5
+        },
+        "04" : {
+          "name" : "Health Grooming",
+          "rating" : 3
+        },
+        "05" : {
+          "name" : "Trainability ",
+          "rating" : 4
+        }
+      },
+      "highlight" : {
+        "01" : "Eskies are happy, active, intelligent dogs. They thrive on activity. Plan on keeping your Eskie busy with training classes, games, romps at a dog park, or hikes. A busy Eskie is unlikely to become bored — a state you want to avoid with this breed, because boredom leads to excessive barking, inappropriate chewing, and other annoying behaviors. ",
+        "02" : "The Eskie needs to be with his family, so don't plan on leaving him alone for long periods at a time, or he may develop separation anxiety.",
+        "03" : "If you are a confident leader, you'll enjoy life with an Eskie. If you're not, you're apt to have an Eskie that's leading you.",
+        "04" : "Do not trust even a well-trained and well-socialized Eskie with small pets such as birds, hamsters, and gerbils. Chances are, he will succumb to his instincts and give chase.",
+        "05" : "To get a healthy dog, never buy a puppy from an irresponsible breeder, puppy mill, or pet store."
+      },
+      "image" : "http://ecx.images-amazon.com/images/I/72BO-cTM%2BEL.jpg",
+      "link" : "american-eskimo.html",
+      "name" : "American Eskimo",
+      "size" : {
+        "01" : "The American Eskimo Dog comes in three sizes: Toy, Miniature, and Standard. Toys stand 9 to 12 inches and weigh about 10 pounds. Miniatures stand 12 to 15 inches and weigh about 20 pounds. Standards stand 15 inches to 19 inches and weigh about 30 pounds."
+      },
+      "summary" : {
+        "01" : "Called “the dog beautiful” by his admirers, the American Eskimo Dog, or “Eskie,” is a striking fellow with his white coat, sweet expression, and black eyes. He’s a Nordic dog breed, a member of the Spitz family. Eskies are lively, active companion dogs who love to entertain and join in on all family activities. They are outgoing and friendly with family and friends, but reserved with strangers. Although the Eskie is a small dog — 10 to 30 pounds — he has a big-dog attitude."
+      }
+    },
+	
+	"02" : {
+      "character" : {
+        "01" : {
+          "name" : "Adaptability",
+          "rating" : 4
+        },
+        "02" : {
+          "name" : "Exercise Needs",
+          "rating" : 4
+        },
+        "03" : {
+          "name" : "Friendliness",
+          "rating" : 5
+        },
+        "04" : {
+          "name" : "Health Grooming",
+          "rating" : 2
+        },
+        "05" : {
+          "name" : "Trainability ",
+          "rating" : 3
+        }
+      },
+      "highlight" : {
+        "01" : "Bichons can be difficult to housebreak. Crate training is recommended.",
+        "02" : "Bichons don't like to be left alone for long periods of time.",
+        "03" : "Bichon Frise puppies are tiny and should only be handled by children under careful adult supervision.",
+        "04" : "Bichons are intelligent and cunning. To help your Bichon be the best companion possible, obedience training is recommended.",
+        "05" : "Grooming is a must! Be prepared to pay for professional grooming. Highly motivated owners can learn the technique, but it isn't easy and requires a lot of time.",
+		"06" : "Bichons can be prone to skin problems and allergies.",
+		"07" : "Because they're cute and small, you might be tempted to overprotect your Bichon Frise. This is a mistake and can lead to your dog becoming spoiled, shy, and fearful. Be watchful for dangerous situations, but teach your Bichon confidence by acting confident about his ability to cope with people, other animals, and situations.",
+		"08" : "To get a healthy Bichon, never buy a puppy from an irresponsible breeder, puppy mill, or pet store. Look for a reputable breeder who tests her breeding dogs to make sure they're free of genetic diseases that they might pass onto the puppies, and that they have sound temperaments."
+	  },
+      "image" : "http://dgicdplf3pvka.cloudfront.net/images/dogbreeds/large/Bichon-Frise.jpg",
+      "link" : "bichon-frise.html",
+      "name" : "Bichon Frise",
+      "size" : {
+        "01" : "Males and females stand about 9 to 11 inches tall and weigh 7 to 12 pounds."
+      },
+      "summary" : {
+        "01" : "The Bichon Frise is a cheerful, small dog breed with a love of mischief and a lot of love to give. With his black eyes and fluffy white coat, the Bichon looks almost like a child’s toy. And it doesn’t take long to realize that the Bichon can be your happiest and most enthusiastic companion."
+		}
+    }
+  },
+  "home" : {
+    "image" : "http://images2.fanpop.com/image/photos/13600000/Dog-wallpaper-dogs-13632586-1280-1024.jpg",
+    "intro" : "You want to own a dog, but you don't konw what dog breed is suitable for your family ? Just come our website!",
+    "title" : "The Dog Zone - The wonderful world of dog lovers"
+  },
+  "sidebar" : {
+    "home" : "index.html",
+    "login" : "login.html",
+    "logo" : "images/dog-zone-logo.png",
+    "logout" : "logout.html",
+    "topic" : "topic.html"
+  }
+}
