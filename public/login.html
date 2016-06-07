@@ -3,34 +3,40 @@
 	project = help
 	blog = login
 	contact = logout-->
-<html>
+<html ng-app="dogzone">
 <head>
 	<meta charset="UTF-8">
 	<title>Login - The Dog Zone</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>    
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script> 	
+    <script src="scripts/index.js"></script>
 </head>
-<body>
+<body ng-controller="login">
 	<div id="background-green">
 		background
 	</div>
 	<div class="page">
 		<div class="login-page">
 			<div class="sidebar">
-				<a href="index.html" id="logo"><img src="images/dog-zone-logo.png" alt="logo"></a>
+				<a href="{{info.sidebar.home}}" id="logo"><img src="{{info.sidebar.logo}}" alt="logo"></a>
 				<ul>
 					<li class="home">
-						<a href="index.html">Home</a>
+						<a href="{{info.sidebar.home}}">Home</a>
 					</li>
 					<li class="topic">
-						<a href="topic.html">Dog Breeds</a>
+						<a href="{{info.sidebar.topic}}">Dog Breeds</a>
 					</li>
 					
 					<li class="selected login">
-						<a href="login.html">Log In</a>
+						<a href="{{info.sidebar.login}}">Log In</a>
 					</li>
 					<li class="logout">
-						<a href="index.html">Log Out</a>
+						<a href="{{info.sidebar.logout}}">Log Out</a>
 					</li>
+					
 				</ul>
 				
 			</div>
@@ -47,9 +53,9 @@
 							</form>
 							<button>LOGIN</button>
 							<button>SIGN UP</button>
-							<h2>
-								<a href='#'>Forgot Password?</a>
-							</h2>
+							<input type="image" src="images/google_icon.png" ng-click="GoogleLogin()" class="imgbutton">
+							<input type="image" src="images/facebook_icon.png" ng-click="GoogleLogin()" class="imgbutton">
+														
 						</section>
 					</div>
 					

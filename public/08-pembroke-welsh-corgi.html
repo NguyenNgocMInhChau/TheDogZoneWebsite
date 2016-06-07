@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html ng-app="dogzone">
+<head>
+	<meta charset="UTF-8">
+	<title>Pembroke Welsh Corgi - The Dog Zone</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>    
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script> 	
+    <script src="scripts/index.js"></script>
+</head>
+<body ng-controller="americanEskimo" >
+	<div id="background-lightyellow">
+		background
+	</div>
+	<div class="page">
+		<div class="topic-page">
+			<div class="sidebar">
+				<a href="{{info.sidebar.home}}" id="logo"><img src="{{info.sidebar.logo}}" alt="logo"></a>
+				<ul>
+					<li class="home">
+						<a href="index.html">Home</a>
+					</li>
+					<li class="selected topic">
+						<a href="topic.html">Dog Breeds</a>
+					</li>
+					
+					<li class="login">
+						<a href="login.html">Log In</a>
+					</li>
+					<li class="logout">
+						<a href="logout.html">Log Out</a>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="body">
+				<div class="content-project">
+					<div>
+						<h3>{{info.breeds.08.name}}</h3>
+						<div class="navigation">
+							<a href="#" id="prev">Previous</a> <a href="#" id="next">Next</a>
+						</div>
+					</div>
+					
+					<div class="figure">
+						<img src="{{info.breeds.08.image}}" alt=""> 
+						<div>
+							<h3>Summary</h3>
+							<div ng-repeat="x in info.breeds.08.summary">
+								<p>{{x}}</p>
+							</div>
+							<br/>
+							
+							<h3>Characteristics</h3>
+							<div ng-repeat="x in info.breeds.08.character">
+								<p>{{x.name}} :  {{x.rating}}</p>
+							</div>	
+							<br/>
+							
+							<h3>Vital Stats</h3>
+							<div ng-repeat="x in info.breeds.08.vital_stats">
+								<p>{{x.name}} :  {{x.value}}</p>
+							</div>
+							
+							<br/>
+							<h3>Highlight</h3>
+							<div ng-repeat="x in info.breeds.08.highlight">
+								<p>{{x}}</p>
+							</div>
+							
+							<br/>
+							<h3>History</h3>
+							<div ng-repeat="x in info.breeds.08.history">
+								<p>{{x}}</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="comment">
+						<div ng-hide="isLoged">
+							<button ng-click="ClickLogin()">Test</button>
+							<a href ="login.html">Log In </a><span>to leave comments</span>
+						</div>
+						
+						<div ng-show="isLoged">
+							<h2>Comments</h2>
+							<div><p>Show Comments here</p></div>
+							<textarea>Enter your comment here.....</textarea>
+							<button>Commit</button>
+						</div>
+							
+					</div>
+				</div>
+				<div class="footer">
+					<p>
+					Nguyen Ngoc Minh Chau <br/>
+					Nguyen Dinh Chung
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
