@@ -11,7 +11,7 @@
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script> 	
     <script src="scripts/index.js"></script>
 </head>
-<body ng-controller="americanEskimo" >
+<body ng-controller="breed" ng-init="url='03-alaskan-malamute.html'">
 	<div id="background-lightyellow">
 		background
 	</div>
@@ -21,17 +21,17 @@
 				<a href="{{info.sidebar.home}}" id="logo"><img src="{{info.sidebar.logo}}" alt="logo"></a>
 				<ul>
 					<li class="home">
-						<a href="index.html">Home</a>
+						<a href="{{info.sidebar.home}}">Home</a>
 					</li>
 					<li class="selected topic">
-						<a href="topic.html">Dog Breeds</a>
+						<a href="{{info.sidebar.topic}}">Dog Breeds</a>
 					</li>
 					
 					<li class="login">
-						<a href="login.html">Log In</a>
+						<a href="{{info.sidebar.login}}">Log In</a>
 					</li>
 					<li class="logout">
-						<a href="logout.html">Log Out</a>
+						<a href="#" ng-click="clickLogout()">Log Out</a>
 					</li>
 				</ul>
 				
@@ -52,26 +52,27 @@
 							<div ng-repeat="x in info.breeds.03.summary">
 								<p>{{x}}</p>
 							</div>
-							<br/>
+							<hr width="40%">
 							
 							<h3>Characteristics</h3>
-							<div ng-repeat="x in info.breeds.03.character">
-								<p>{{x.name}} :  {{x.rating}}</p>
+							<div class="character" ng-repeat="x in info.breeds.03.character">
+								<p class="character">{{x.name}} :  <img class="resize" src="images/{{x.rating}}-stars.png">
+                                </p>
 							</div>	
-							<br/>
+                            <hr width="40%">
 							
 							<h3>Vital Stats</h3>
 							<div ng-repeat="x in info.breeds.03.vital_stats">
 								<p>{{x.name}} :  {{x.value}}</p>
 							</div>
 							
-							<br/>
+							<hr width="40%">
 							<h3>Highlight</h3>
 							<div ng-repeat="x in info.breeds.03.highlight">
 								<p>{{x}}</p>
 							</div>
 							
-							<br/>
+							<hr width="40%">
 							<h3>History</h3>
 							<div ng-repeat="x in info.breeds.03.history">
 								<p>{{x}}</p>

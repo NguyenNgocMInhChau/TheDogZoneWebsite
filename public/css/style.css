@@ -24,11 +24,6 @@ p a:hover {
 	color:#995d36!important;
 }
 
-img.resize{
-   width:100px;
-   height:50px;
-}
-
 #background-green {
 	background:url(../images/bg-green-absolute.png);
 	height:100%;
@@ -607,7 +602,12 @@ img.resize{
 }
 .body .content-project div:first-child {
 	padding-bottom:0;
-	padding-top:26px;
+	padding-top:5px;
+}
+
+.body .content-project div:first-child.character {
+	padding-bottom:0;
+	padding-top:0px;
 }
 .body .content-project div:first-child div.navigation {
 	float:right;
@@ -770,6 +770,16 @@ img.resize{
 	width: 100%;
 	height: auto;
 }
+
+.body .content-project div.figure img.resize {
+	display:block;
+	width: 150px;
+	height: auto;
+	float: right;
+	padding-right:350px;
+}
+
+
 .body .content-project div.figure span {
 	background-color:#dd8514;
 	color:#fff;
@@ -785,14 +795,13 @@ img.resize{
 	width:198px;
 }
 .body .content-project div.figure div {
-	margin:23px 0 0;
+	margin:0px 0 0;
 	padding:0;
 }
 .body .content-project div.figure div h3 {
 	color:#7b8846;
-	font-size:21px;
-	margin-top:15px;
-	
+	font-size:30px;
+	margin-top:15px;	
 }
 .body .content-project div.figure div p {
 	color:#5c3820;
@@ -802,12 +811,27 @@ img.resize{
 	letter-spacing:.02m;
 	line-height:24px;
 	padding-top: 0px;
-	padding-right: 20px;
+	padding-right: 60px;
 	padding-bottom: 0;
-	padding-left: 0;
+	padding-left: 20px;
 	margin-top: 0px;
+	
+	text-align:justify
 }
 
+.body .content-project div.figure div p.character {
+	color:#5c3820;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
+
+	letter-spacing:.02m;
+	line-height:40px;
+	padding-top: 0px;
+	padding-right: 20px;
+	padding-bottom: 0;
+	padding-left: 20px;
+	margin-top: 0px;
+}
 
 
 .body  .content-project div.comment button {

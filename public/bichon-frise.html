@@ -3,7 +3,7 @@
 <html ng-app="dogzone">
 <head>
 	<meta charset="UTF-8">
-	<title>America Pit Bull Terrier - The Dog Zone</title>
+	<title>Bichon Frise - The Dog Zone</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>    
@@ -11,7 +11,7 @@
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script> 	
     <script src="scripts/index.js"></script>
 </head>
-<body ng-controller="breed" ng-init="url='05-american-pit-bull-terrier.html'">
+<body ng-controller="bichonFrise">
 	<div id="background-lightyellow">
 		background
 	</div>
@@ -21,17 +21,17 @@
 				<a href="{{info.sidebar.home}}" id="logo"><img src="{{info.sidebar.logo}}" alt="logo"></a>
 				<ul>
 					<li class="home">
-						<a href="{{info.sidebar.home}}">Home</a>
+						<a href="index.html">Home</a>
 					</li>
 					<li class="selected topic">
-						<a href="{{info.sidebar.topic}}">Dog Breeds</a>
+						<a href="topic.html">Dog Breeds</a>
 					</li>
 					
 					<li class="login">
-						<a href="{{info.sidebar.login}}">Log In</a>
+						<a href="login.html">Log In</a>
 					</li>
 					<li class="logout">
-						<a href="#" ng-click="clickLogout()">Log Out</a>
+						<a href="loguot.html">Log Out</a>
 					</li>
 				</ul>
 				
@@ -39,54 +39,47 @@
 			<div class="body">
 				<div class="content-project">
 					<div>
-						<h3>{{info.breeds.05.name}}</h3>
+						<h3>{{info.breeds.02.name}}</h3>
 						<div class="navigation">
-							<a href="04-siberian-husky.html" id="prev">Previous</a> <a href="06-tibetan-mastiff.html" id="next">Next</a>
+							<a href="#" id="prev">Previous</a> <a href="#" id="next">Next</a>
 						</div>
 					</div>
 					
 					<div class="figure">
-						<img src="{{info.breeds.05.image}}" alt=""> 
+						<img src="{{info.breeds.02.image}}" alt=""> 
 						<div>
 							<h3>Summary</h3>
-							<div ng-repeat="x in info.breeds.05.summary">
+							<div ng-repeat="x in info.breeds.02.summary">
 								<p>{{x}}</p>
 							</div>
-							<hr width="40%">
+							<br/>
 							
 							<h3>Characteristics</h3>
-							<div class="character" ng-repeat="x in info.breeds.05.character">
-								<p class="character">{{x.name}} :  <img class="resize" src="images/{{x.rating}}-stars.png">
-                                </p>
+							<div ng-repeat="x in info.breeds.02.character">
+								<p>{{x.name}} :  {{x.rating}}</p>
 							</div>	
-                            <hr width="40%">
+							<br/>
 							
-							<h3>Vital Stats</h3>
-							<div ng-repeat="x in info.breeds.05.vital_stats">
-								<p>{{x.name}} :  {{x.value}}</p>
+							<h3>Size</h3>
+							<div ng-repeat="x in info.breeds.02.size">
+								<p>{{x}}</p>
 							</div>
 							
-							<hr width="40%">
+							<br/>
 							<h3>Highlight</h3>
-							<div ng-repeat="x in info.breeds.05.highlight">
+							<div ng-repeat="x in info.breeds.02.highlight">
 								<p>{{x}}</p>
 							</div>
 							
-							<hr width="40%">
-							<h3>History</h3>
-							<div ng-repeat="x in info.breeds.05.history">
-								<p>{{x}}</p>
-							</div>
 						</div>
 					</div>
 					
 					<div class="comment">
-						<div ng-hide="isLoged">
-							<button ng-click="ClickLogin()">Test</button>
+						<div>
 							<a href ="login.html">Log In </a><span>to leave comments</span>
 						</div>
 						
-						<div ng-show="isLoged">
+						<div>
 							<h2>Comments</h2>
 							<div><p>Show Comments here</p></div>
 							<textarea>Enter your comment here.....</textarea>

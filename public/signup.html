@@ -13,9 +13,9 @@
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script> 	
 	<script src="scripts/lsbridge.js"></script>
-	<script src="scripts/index.js"></script>
+    <script src="scripts/index.js"></script>
 </head>
-<body ng-controller="login">
+<body ng-controller="signup">
 	<div id="background-green">
 		background
 	</div>
@@ -28,22 +28,20 @@
 						<a href="{{info.sidebar.home}}">Home</a>
 					</li>
 					<li class="topic">
-						<a href="{{info.sidebar.topic}}">Dog Breeds</a>
+						<a href="{{info.sidebar.breeds}}">Dog Breeds</a>
 					</li>
 					
-					<li class="selected login">
+					<li class="login">
 						<a href="{{info.sidebar.login}}">Log In</a>
-
 					</li>
-					<li class="help">
+					<li class="selected help">
 						<a href="{{info.sidebar.signup}}">Sign Up</a>
-
 					</li>
 					<li class="logout">
-						<a href="{{info.sidebar.logout}}">Log Out</a>
+						<a href="#" ng-click="clickLogout()">Log Out</a>
 					</li>
 					
-
+					
 				</ul>
 				
 			</div>
@@ -57,13 +55,10 @@
 							<form>
 								<input placeholder='User Name' type='text' ng-model="email">
 								<input placeholder='Password' type='password' ng-model="password">
+								<input placeholder='Re-enter Password' type='password' ng-model="rePassword">
 							</form>
-							<button ng-click="ClickLoginBtn()">LOG IN</button>
-							<button>SIGN UP</button>
-
-							<input type="image" src="images/google_icon.png" ng-click="GoogleLogin()" class="imgbutton">
-							<input type="image" src="images/facebook_icon.png" ng-click="GoogleLogin()" class="imgbutton">
-
+							<button ng-click="ClickSignupBtn()">SIGN UP</button>
+							<button href = "{{info.sidebar.login}}">LOG IN</button>
 														
 						</section>
 					</div>
