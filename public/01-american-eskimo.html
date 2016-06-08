@@ -49,6 +49,8 @@
 					<div class="figure">
 						<img src="{{info.breeds.01.image}}" alt=""> 
 						<div>
+						<br/>
+						<h3><marquee  color="white">{{info.breeds.01.name}}</marquee> </h3>
 							<h3 style="font-weight:bold">Summary</h3>
 							<div ng-repeat="x in info.breeds.01.summary">
 								<p>{{x}}</p>
@@ -81,16 +83,21 @@
 						</div>
 					</div>
 					
-					<div class="comment">
+					<div class="comment" >
+						<h2>Comments</h2>
+						<div ng-repeat="x in info.breeds.01.comments" class="post">
+							<p>{{x.comment}}</p>
+						</div>
+						<div ng-init="num = '01'"><div>
 						<div ng-hide="isLoged">
 							<a href ="login.html">Log In </a><span>to leave comments</span>
 						</div>
 						
 						<div ng-show="isLoged">
-							<h2>Comments</h2>
-							<div><p>Show Comments here</p></div>
-							<textarea>Enter your comment here.....</textarea>
-							<button>Commit</button>
+							
+							<textarea ng-model = "comment"></textarea>
+							
+							<button ng-click = "ClickBtnCommit()">Commit</button>
 						</div>
 							
 					</div>
