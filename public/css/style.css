@@ -961,7 +961,15 @@ p a:hover {
 .body  .content-project div.comment div p {
   font-size: 14px;
 }
-
+.body  .content-project div.comment div.post {
+	margin: 20px 0 0 0;
+	background: #AED581;
+		
+}
+.body  .content-project div.comment div.post p {
+	font-size: 16px;
+	max-height: 5px;
+}
 
 .body  .content-project div.comment div a {
   color: #e74c3c;
