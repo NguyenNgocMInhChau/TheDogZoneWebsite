@@ -472,6 +472,103 @@ img.resize{
   color: #c0392b;
 }
 
+-----------------------
+.body .signup-page div {
+	background-color:#d35400;
+	margin:-9px 5px 0 18px;
+	overflow:hidden;
+	padding:26px 30px 21px;
+}
+
+.body .signup-page section {
+  width: 300px;
+  height: 500px;
+  background: #ecf0f1;
+  padding: 0 30px 30px 30px;
+  margin: 60px auto;
+  text-align: center;
+  border-radius: 5px;
+}
+.body .signup-page section a{
+	float: right;
+	margin: 5px 5px 0 5px;
+}
+
+.body .signup-page span {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: -40px;
+  height: 80px;
+  width: 80px;
+  background: url('http://www.iconsdownload.net/icons/64/1025-head-of-dog.png') center center no-repeat, #f39c12;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+.body .signup-page h1 {
+  font-size: 36px;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+
+.body .signup-page input {
+  width: 100%;
+  background: #bdc3c7;
+  border: none;
+  height: 30px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  color: #7f8c8d;
+}
+
+.body .signup-page input:focus {
+  outline: none;
+}
+
+.body .signup-page button {
+  width: 100%;
+  height: 35px;
+  border: none;
+  background: #3498db;
+  color: #ecf0f1;
+  font-weight: 100;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  transition: all ease-in-out .2s;
+  border-bottom: 3px solid #2980b9;
+}
+
+.body .signup-page button:focus {
+  outline: none;
+}
+
+.body .signup-page button:hover {
+  background: #2980b9;
+}
+
+.body .signup-page section .imgbutton{
+	width: 32px;
+	height: 32px;
+	float: right;
+	margin: 5px 5px 0 5px;
+}
+
+.body .signup-page h2 {
+  font-size: .75em;
+}
+
+.body .signup-page a {
+  color: #e74c3c;
+  text-decoration: none;
+  transition: all ease-in-out .2s;
+}
+
+.body .signup-page a:hover {
+  color: #c0392b;
+}
 .body .content-topic div:first-child {
 	background:none #FFF;
 	margin-top:0;

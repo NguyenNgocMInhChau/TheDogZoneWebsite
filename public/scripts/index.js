@@ -5,36 +5,50 @@ app.service("DataObject",function($firebaseObject) {
 			var DataObject = $firebaseObject(ref);
 			return DataObject;
 		});
-app.controller("home",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
-			DataObject.$bindTo($scope, "info");
-		}]);
-		
-
-
-
 //Viết service getChild() cho info
 app.controller("home",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
 			DataObject.$bindTo($scope, "info");
+			$scope.$watch('url', function () {
+				console.log("send link " + $scope.url);			
+				localStorage.setItem("prePage",$scope.url);					
+			});
+			$scope.clickLogout = function () {
+				$scope.ref = new Firebase("https://dogzone.firebaseio.com")
+				$scope.ref.unauth();
+				localStorage.setItem("isLoged", false);
+				alert("Log out!");
+				$scope.isLoged = localStorage.getItem("isLoged");
+				$scope.$evalAsync();
+			};
 		}]);
 		
 
 app.controller("topic", ['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
 			DataObject.$bindTo($scope, "info");
+			$scope.$watch('url', function () {
+				console.log("send link " + $scope.url);			
+				localStorage.setItem("prePage",$scope.url);					
+			});
+			$scope.clickLogout = function () {
+				$scope.ref = new Firebase("https://dogzone.firebaseio.com")
+				$scope.ref.unauth();
+				localStorage.setItem("isLoged", false);
+				alert("Log out!");
+				$scope.isLoged = localStorage.getItem("isLoged");
+				$scope.$evalAsync();
+			};
 		}]);
 		
-
-app.controller("home",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
-			DataObject.$bindTo($scope, "info");
-			
-			
-		}]);
-			
 
 app.controller("login",['$scope', '$firebase', '$firebaseObject', 'DataObject','$window',
 				function($scope,$firebase, $firebaseObject, DataObject, $window){
 			DataObject.$bindTo($scope, "info");
-			
-			
+			var log = false;
+			log = localStorage.getItem("isLoged");
+			if (log == true){
+				alert("You have been loged in!");
+				$window.location.href = "index.html";
+			}
 				
 			// Create a callback which logs the current auth state
 			function authDataCallback(authData) {
@@ -57,7 +71,7 @@ app.controller("login",['$scope', '$firebase', '$firebaseObject', 'DataObject','
 					$scope.path = localStorage.getItem("prePage");
 					if($scope.path == '')
 					{
-						$scope.path = $scope.info.sidebar.home;
+						$scope.path = "index.html";
 					}
 					$window.location.href = $scope.path;
 					
@@ -75,21 +89,69 @@ app.controller("login",['$scope', '$firebase', '$firebaseObject', 'DataObject','
 
             };
 			
-			/*$scope.logout() = function () {
+			$scope.clickLogout = function () {
 				$scope.ref.unauth();
 				localStorage.setItem("isLoged", false);
 				alert("Log out!");
-			};*/
+			};
 }]);
 
-app.controller("signup",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
+app.controller("signup",['$scope', '$firebaseObject', 'DataObject','$window', function($scope, $firebaseObject, DataObject,$window){
 			DataObject.$bindTo($scope, "info");
+			//Neu da dang nhap, tro ve trang chu
+			var log = false;
+			log =localStorage.getItem("isLoged");
+			if (log == true){
+				alert("You have been loged in!");
+				$window.location.href = "index.html";
+			}		
+			$scope.ClickLoginBtn = function(){
+				$window.location.href = "login.html";
+			};			
+			$scope.ClickSignupBtn = function () {
+				if($scope.email != null)
+				{
+					if ($scope.password != $scope.repassword && $scope.password != null )
+					{
+						$scope.ref = new Firebase("https://dogzone.firebaseio.com");
+						$scope.ref.createUser({
+							email: $scope.email,
+							password: $scope.password
+						}, function (error, userData) {
+							if (error) {
+								console.log("Error creating user:", error);
+								alert("Please change email")
+							} else {
+								console.log("Successfully created user account with uid:", userData.Email);
+								alert("Successfully created user account!")
+								$window.location.href = "login.html";
+							}
+						});
+						$scope.$evalAsync();
+					}
+					else{
+						$scope.message = "Enter password and repassword again!";
+					}
+				}
+				else{
+					$scope.message = "Please enter email!";
+				}
 			
+			};
+			
+			$scope.clickLogout = function () {
+				$scope.ref = new Firebase("https://dogzone.firebaseio.com")
+				$scope.ref.unauth();
+				localStorage.setItem("isLoged", false);
+				alert("Log out!");
+				$scope.isLoged = localStorage.getItem("isLoged");
+				$scope.$evalAsync();
+			};
 			
 		}]);
 		
-app.controller("breed",['$scope', '$firebaseObject', 'DataObject', '$location',
-				function($scope, $firebaseObject, DataObject,$location){
+app.controller("breed",['$scope', '$firebaseObject', 'DataObject', 
+				function($scope, $firebaseObject, DataObject){
 			DataObject.$bindTo($scope, "info");
 			$scope.isLoged = localStorage.getItem("isLoged"); 
 			$scope.$watch('url', function () {
@@ -105,25 +167,13 @@ app.controller("breed",['$scope', '$firebaseObject', 'DataObject', '$location',
 				$scope.isLoged = localStorage.getItem("isLoged");
 				$scope.$evalAsync();
 			};
+			
+			
 		}]);			
 
 
 		
-app.controller("bichonFrise",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
-			DataObject.$bindTo($scope, "info");
-			$scope.isLoged = localStorage.getItem("isLoged");            
-			localStorage.setItem("prePage","02-bitchon-frise.html");
-			console.log("send link ");
-			
-			$scope.clickLogout = function () {
-				$scope.ref = new Firebase("https://dogzone.firebaseio.com")
-				$scope.ref.unauth();
-				localStorage.setItem("isLoged", false);
-				alert("Log out!");
-				$scope.isLoged = localStorage.getItem("isLoged");
-				$scope.$evalAsync();
-			};
-		}]);
+
 		
 
 

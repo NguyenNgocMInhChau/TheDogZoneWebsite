@@ -6,7 +6,7 @@
 <html ng-app="dogzone">
 <head>
 	<meta charset="UTF-8">
-	<title>Login - The Dog Zone</title>
+	<title>SignUp - The Dog Zone</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>    
@@ -20,7 +20,7 @@
 		background
 	</div>
 	<div class="page">
-		<div class="login-page">
+		<div class="help-page">
 			<div class="sidebar">
 				<a href="{{info.sidebar.home}}" id="logo"><img src="{{info.sidebar.logo}}" alt="logo"></a>
 				<ul>
@@ -46,19 +46,21 @@
 				
 			</div>
 			<div class="body">
-				<div  class = "from-page">
+				<div  class = "signup-page">
 					<div>
 						<section>
 							<span></span>
-							<h1>Login</h1>
+							<h1>Sign Up</h1>
 							<p></p>
 							<form>
-								<input placeholder='User Name' type='text' ng-model="email">
+								<input placeholder='Email' type='text' ng-model="email">
 								<input placeholder='Password' type='password' ng-model="password">
 								<input placeholder='Re-enter Password' type='password' ng-model="rePassword">
+								
 							</form>
 							<button ng-click="ClickSignupBtn()">SIGN UP</button>
-							<button href = "{{info.sidebar.login}}">LOG IN</button>
+							<button ng-click="ClickLoginBtn()">LOG IN</button>
+							<p class = "message">{{message}}</p>
 														
 						</section>
 					</div>
