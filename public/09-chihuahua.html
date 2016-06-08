@@ -52,26 +52,27 @@
 							<div ng-repeat="x in info.breeds.09.summary">
 								<p>{{x}}</p>
 							</div>
-							<br/>
+							<hr width="40%">
 							
 							<h3>Characteristics</h3>
-							<div ng-repeat="x in info.breeds.09.character">
-								<p>{{x.name}} :  {{x.rating}}</p>
+							<div class="character" ng-repeat="x in info.breeds.09.character">
+								<p class="character">{{x.name}} :  <img class="resize" src="images/{{x.rating}}-stars.png">
+                                </p>
 							</div>	
-							<br/>
+                            <hr width="40%">
 							
 							<h3>Vital Stats</h3>
 							<div ng-repeat="x in info.breeds.09.vital_stats">
 								<p>{{x.name}} :  {{x.value}}</p>
 							</div>
 							
-							<br/>
+							<hr width="40%">
 							<h3>Highlight</h3>
 							<div ng-repeat="x in info.breeds.09.highlight">
 								<p>{{x}}</p>
 							</div>
 							
-							<br/>
+							<hr width="40%">
 							<h3>History</h3>
 							<div ng-repeat="x in info.breeds.09.history">
 								<p>{{x}}</p>

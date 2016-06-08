@@ -44,7 +44,7 @@
 					<div>
 						<h3>{{info.breeds.02.name}}</h3>
 						<div class="navigation">
-							<a href="03-alaskan-malamute.html" id="prev">Previous</a> <a href="01-american-eskimo.html" id="next">Next</a>
+							<a href="01-american-eskimo.html" id="prev">Previous</a> <a href="03-alaskan-malamute.html"id="next">Next</a>
 						</div>
 					</div>
 					
@@ -55,26 +55,27 @@
 							<div ng-repeat="x in info.breeds.02.summary">
 								<p>{{x}}</p>
 							</div>
-							<br/>
+							<hr width="40%">
 							
 							<h3>Characteristics</h3>
-							<div ng-repeat="x in info.breeds.02.character">
-								<p>{{x.name}} :  {{x.rating}}</p>
+							<div class="character" ng-repeat="x in info.breeds.02.character">
+								<p class="character">{{x.name}} :  <img class="resize" src="images/{{x.rating}}-stars.png">
+                                </p>
 							</div>	
-							<br/>
+                            <hr width="40%">
 							
 							<h3>Vital Stats</h3>
 							<div ng-repeat="x in info.breeds.02.vital_stats">
 								<p>{{x.name}} :  {{x.value}}</p>
 							</div>
 							
-							<br/>
+							<hr width="40%">
 							<h3>Highlight</h3>
 							<div ng-repeat="x in info.breeds.02.highlight">
 								<p>{{x}}</p>
 							</div>
 							
-							<br/>
+							<hr width="40%">
 							<h3>History</h3>
 							<div ng-repeat="x in info.breeds.02.history">
 								<p>{{x}}</p>
