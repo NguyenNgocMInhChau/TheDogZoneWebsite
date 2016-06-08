@@ -13,7 +13,7 @@
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script> 	
 	<script src="scripts/lsbridge.js"></script>
-    <script src="scripts/index.js"></script>
+	<script src="scripts/index.js"></script>
 </head>
 <body ng-controller="login">
 	<div id="background-green">
@@ -33,15 +33,17 @@
 					
 					<li class="selected login">
 						<a href="{{info.sidebar.login}}">Log In</a>
+
 					</li>
 					<li class="help">
 						<a href="{{info.sidebar.signup}}">Sign Up</a>
+
 					</li>
 					<li class="logout">
 						<a href="{{info.sidebar.logout}}">Log Out</a>
 					</li>
 					
-					
+
 				</ul>
 				
 			</div>
@@ -58,6 +60,10 @@
 							</form>
 							<button ng-click="ClickLoginBtn()">LOG IN</button>
 							<button>SIGN UP</button>
+
+							<input type="image" src="images/google_icon.png" ng-click="GoogleLogin()" class="imgbutton">
+							<input type="image" src="images/facebook_icon.png" ng-click="GoogleLogin()" class="imgbutton">
+
 														
 						</section>
 					</div>

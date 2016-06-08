@@ -11,7 +11,7 @@
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script> 	
     <script src="scripts/index.js"></script>
 </head>
-<body ng-controller="bichonFrise" >
+<body ng-controller="breed" ng-init="url='02-bitchon-frise.html'">
 	<div id="background-lightyellow">
 		background
 	</div>
@@ -21,30 +21,30 @@
 				<a href="{{info.sidebar.home}}" id="logo"><img src="{{info.sidebar.logo}}" alt="logo"></a>
 				<ul>
 					<li class="home">
-						<a href="index.html">Home</a>
+						<a href="{{info.sidebar.home}}">Home</a>
 					</li>
 					<li class="selected topic">
-						<a href="topic.html">Dog Breeds</a>
+						<a href="{{info.sidebar.breeds}}">Dog Breeds</a>
 					</li>
 					
 					<li class="login">
-						<a href="login.html">Log In</a>
+						<a href="{{info.sidebar.login}}">Log In</a>
 					</li>
 					<li class="help">
 						<a href="{{info.sidebar.signup}}">Sign Up</a>
 					</li>
 					<li class="logout">
-						<a href="logout.html">Log Out</a>
+						<a href="#" ng-click="clickLogout()">Log Out</a>
 					</li>
 				</ul>
 				
 			</div>
-			<div class="body">
+			<div class="body" >
 				<div class="content-project">
 					<div>
 						<h3>{{info.breeds.02.name}}</h3>
 						<div class="navigation">
-							<a href="#" id="prev">Previous</a> <a href="#" id="next">Next</a>
+							<a href="03-alaskan-malamute.html" id="prev">Previous</a> <a href="01-american-eskimo.html" id="next">Next</a>
 						</div>
 					</div>
 					

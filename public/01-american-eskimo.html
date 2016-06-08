@@ -10,9 +10,9 @@
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script> 	
 	<script src="scripts/lsbridge.js"></script>
-    <script src="scripts/index.js"></script>
+	<script src="scripts/index.js"></script>
 </head>
-<body ng-controller="americanEskimo" >
+<body ng-controller="breed" ng-init="url='01-american-eskimo.html'">
 	<div id="background-lightyellow">
 		background
 	</div>
@@ -22,17 +22,14 @@
 				<a href="{{info.sidebar.home}}" id="logo"><img src="{{info.sidebar.logo}}" alt="logo"></a>
 				<ul>
 					<li class="home">
-						<a href="index.html">Home</a>
+						<a href="{{info.sidebar.home}}">Home</a>
 					</li>
 					<li class="selected topic">
-						<a href="topic.html">Dog Breeds</a>
+						<a href="{{info.sidebar.topic}}">Dog Breeds</a>
 					</li>
 					
 					<li class="login">
-						<a href="login.html">Log In</a>
-					</li>
-					<li class="help">
-						<a href="{{info.sidebar.signup}}">Sign Up</a>
+						<a href="{{info.sidebar.login}}">Log In</a>
 					</li>
 					<li class="logout">
 						<a href="#" ng-click="clickLogout()">Log Out</a>
@@ -45,7 +42,7 @@
 					<div>
 						<h3>{{info.breeds.01.name}}</h3>
 						<div class="navigation">
-							<a href="#" id="prev">Previous</a> <a href="#" id="next">Next</a>
+						<a href="02-bichon-frise.html" id="next">Next</a>
 						</div>
 					</div>
 					

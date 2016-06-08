@@ -9,36 +9,27 @@ app.controller("home",['$scope', '$firebaseObject', 'DataObject', function($scop
 			DataObject.$bindTo($scope, "info");
 		}]);
 		
+
+
+
+//Viết service getChild() cho info
+app.controller("home",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
+			DataObject.$bindTo($scope, "info");
+		}]);
+		
+
 app.controller("topic", ['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
 			DataObject.$bindTo($scope, "info");
 		}]);
 		
+
 app.controller("home",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
 			DataObject.$bindTo($scope, "info");
 			
 			
 		}]);
 			
-app.controller("americanEskimo",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
-			DataObject.$bindTo($scope, "info");
-			$scope.isLoged = localStorage.getItem("isLoged");            
-			localStorage.setItem("prePage","01-american-eskimo.html");
-			console.log("send link ");
-			
-			$scope.clickLogout = function () {
-				$scope.ref = new Firebase("https://dogzone.firebaseio.com")
-				$scope.ref.unauth();
-				localStorage.setItem("isLoged", false);
-				alert("Log out!");
-				$scope.isLoged = localStorage.getItem("isLoged");
-				$scope.$evalAsync();
-			};
-		}]);			
-		
-app.controller("bichonFrise",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
-			DataObject.$bindTo($scope, "info");
-		}]);
-		
+
 app.controller("login",['$scope', '$firebase', '$firebaseObject', 'DataObject','$window',
 				function($scope,$firebase, $firebaseObject, DataObject, $window){
 			DataObject.$bindTo($scope, "info");
@@ -90,4 +81,51 @@ app.controller("login",['$scope', '$firebase', '$firebaseObject', 'DataObject','
 				alert("Log out!");
 			};*/
 }]);
+
+app.controller("signup",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
+			DataObject.$bindTo($scope, "info");
+			
+			
+		}]);
+		
+app.controller("breed",['$scope', '$firebaseObject', 'DataObject', '$location',
+				function($scope, $firebaseObject, DataObject,$location){
+			DataObject.$bindTo($scope, "info");
+			$scope.isLoged = localStorage.getItem("isLoged"); 
+			$scope.$watch('url', function () {
+				console.log("send link " + $scope.url);			
+				localStorage.setItem("prePage",$scope.url);					
+			});
+					
+			$scope.clickLogout = function () {
+				$scope.ref = new Firebase("https://dogzone.firebaseio.com")
+				$scope.ref.unauth();
+				localStorage.setItem("isLoged", false);
+				alert("Log out!");
+				$scope.isLoged = localStorage.getItem("isLoged");
+				$scope.$evalAsync();
+			};
+		}]);			
+
+
+		
+app.controller("bichonFrise",['$scope', '$firebaseObject', 'DataObject', function($scope, $firebaseObject, DataObject){
+			DataObject.$bindTo($scope, "info");
+			$scope.isLoged = localStorage.getItem("isLoged");            
+			localStorage.setItem("prePage","02-bitchon-frise.html");
+			console.log("send link ");
+			
+			$scope.clickLogout = function () {
+				$scope.ref = new Firebase("https://dogzone.firebaseio.com")
+				$scope.ref.unauth();
+				localStorage.setItem("isLoged", false);
+				alert("Log out!");
+				$scope.isLoged = localStorage.getItem("isLoged");
+				$scope.$evalAsync();
+			};
+		}]);
+		
+
+
+
 

@@ -15,7 +15,7 @@
 	<script src="scripts/lsbridge.js"></script>
     <script src="scripts/index.js"></script>
 </head>
-<body ng-controller="login">
+<body ng-controller="signup">
 	<div id="background-green">
 		background
 	</div>
@@ -28,7 +28,7 @@
 						<a href="{{info.sidebar.home}}">Home</a>
 					</li>
 					<li class="topic">
-						<a href="{{info.sidebar.topic}}">Dog Breeds</a>
+						<a href="{{info.sidebar.breeds}}">Dog Breeds</a>
 					</li>
 					
 					<li class="login">
@@ -55,9 +55,10 @@
 							<form>
 								<input placeholder='User Name' type='text' ng-model="email">
 								<input placeholder='Password' type='password' ng-model="password">
+								<input placeholder='Re-enter Password' type='password' ng-model="rePassword">
 							</form>
-							<button ng-click="ClickLoginBtn()">LOG IN</button>
-							<button>SIGN UP</button>
+							<button ng-click="ClickSignupBtn()">SIGN UP</button>
+							<button href = "{{info.sidebar.login}}">LOG IN</button>
 														
 						</section>
 					</div>
