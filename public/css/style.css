@@ -23,6 +23,12 @@ p a {
 p a:hover {
 	color:#995d36!important;
 }
+
+img.resize{
+   width:100px;
+   height:50px;
+}
+
 #background-green {
 	background:url(../images/bg-green-absolute.png);
 	height:100%;
@@ -377,12 +383,17 @@ p a:hover {
 }
 
 .body .from-page section {
-  width: 275px;
+  width: 300px;
+  height: 400px;
   background: #ecf0f1;
   padding: 0 30px 30px 30px;
   margin: 60px auto;
   text-align: center;
   border-radius: 5px;
+}
+.body .from-page section a{
+	float: right;
+	margin: 5px 5px 0 5px;
 }
 
 .body .from-page span {
@@ -438,6 +449,13 @@ p a:hover {
 
 .body .from-page button:hover {
   background: #2980b9;
+}
+
+.body .from-page section .imgbutton{
+	width: 32px;
+	height: 32px;
+	float: right;
+	margin: 5px 5px 0 5px;
 }
 
 .body .from-page h2 {
@@ -761,9 +779,9 @@ p a:hover {
 	height:30px;
 	line-height:30px;
 	position:absolute;
-	right:28px;
+	right:399px;
 	text-indent:15px;
-	top:410px;
+	top:1077px;
 	width:198px;
 }
 .body .content-project div.figure div {
@@ -780,9 +798,14 @@ p a:hover {
 	color:#5c3820;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:16px;
+
 	letter-spacing:.02m;
 	line-height:24px;
-	padding: 20px 20px 0 0;
+	padding-top: 0px;
+	padding-right: 20px;
+	padding-bottom: 0;
+	padding-left: 0;
+	margin-top: 0px;
 }
 
 

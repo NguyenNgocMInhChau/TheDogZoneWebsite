@@ -3,7 +3,7 @@
 <html ng-app="dogzone">
 <head>
 	<meta charset="UTF-8">
-	<title>American Eskimo - The Dog Zone</title>
+	<title>Golden Retriever - The Dog Zone</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>    
@@ -31,7 +31,7 @@
 						<a href="login.html">Log In</a>
 					</li>
 					<li class="logout">
-						<a href="loguot.html">Log Out</a>
+						<a href="logout.html">Log Out</a>
 					</li>
 				</ul>
 				
@@ -39,38 +39,43 @@
 			<div class="body">
 				<div class="content-project">
 					<div>
-						<h3>{{info.breeds.01.name}}</h3>
+						<h3>{{info.breeds.15.name}}</h3>
 						<div class="navigation">
 							<a href="#" id="prev">Previous</a> <a href="#" id="next">Next</a>
 						</div>
 					</div>
 					
 					<div class="figure">
-						<img src="{{info.breeds.01.image}}" alt=""> 
+						<img src="{{info.breeds.15.image}}" alt=""> 
 						<div>
 							<h3>Summary</h3>
-							<div ng-repeat="x in info.breeds.01.summary">
+							<div ng-repeat="x in info.breeds.15.summary">
 								<p>{{x}}</p>
 							</div>
 							<br/>
 							
 							<h3>Characteristics</h3>
-							<div ng-repeat="x in info.breeds.01.character">
+							<div ng-repeat="x in info.breeds.15.character">
 								<p>{{x.name}} :  {{x.rating}}</p>
 							</div>	
 							<br/>
 							
-							<h3>Size</h3>
-							<div ng-repeat="x in info.breeds.01.size">
-								<p>{{x}}</p>
+							<h3>Vital Stats</h3>
+							<div ng-repeat="x in info.breeds.15.vital_stats">
+								<p>{{x.name}} :  {{x.value}}</p>
 							</div>
 							
 							<br/>
 							<h3>Highlight</h3>
-							<div ng-repeat="x in info.breeds.01.highlight">
+							<div ng-repeat="x in info.breeds.15.highlight">
 								<p>{{x}}</p>
 							</div>
 							
+							<br/>
+							<h3>History</h3>
+							<div ng-repeat="x in info.breeds.15.history">
+								<p>{{x}}</p>
+							</div>
 						</div>
 					</div>
 					
