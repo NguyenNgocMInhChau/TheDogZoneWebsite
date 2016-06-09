@@ -51,6 +51,7 @@ app.controller("login",['$scope', '$firebase', '$firebaseObject', 'DataObject','
 				alert("You have been loged in!");
 				$window.location.href = "index.html";
 			}
+
 				
 			// Create a callback which logs the current auth state
 			function authDataCallback(authData) {
@@ -80,6 +81,7 @@ app.controller("login",['$scope', '$firebase', '$firebaseObject', 'DataObject','
                 }
             }
 			
+			//Nhan login button
 			$scope.ClickLoginBtn = function () {
                 $scope.ref = new Firebase("https://dogzone.firebaseio.com");
                 $scope.ref.onAuth(authDataCallback);
@@ -110,13 +112,28 @@ app.controller("signup",['$scope', '$firebaseObject', 'DataObject','$window', fu
 				alert("You have been loged in!");
 				$window.location.href = "index.html";
 			}		
+			
+			var myRef = new Firebase("https://dogzone.firebaseio.com");
+			var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {
+			  if (error) {
+				// an error occurred while attempting login
+				console.log(error);
+			  } else if (user) {
+				// user authenticated with Firebase
+				alert("You have been loged in!");
+				console.log("User ID: " + user.uid + ", Provider: " + user.provider);
+			  } else {
+				// user is logged out
+			  }
+			});
+			
 			$scope.ClickLoginBtn = function(){
 				$window.location.href = "login.html";
 			};			
 			$scope.ClickSignupBtn = function () {
 				if($scope.email != null)
 				{
-					if ($scope.password === $scope.repassword && $scope.password != null )
+					if ($scope.password === $scope.rePassword && $scope.password != null )
 					{
 						$scope.ref = new Firebase("https://dogzone.firebaseio.com");
 						$scope.ref.createUser({
@@ -127,7 +144,7 @@ app.controller("signup",['$scope', '$firebaseObject', 'DataObject','$window', fu
 								console.log("Error creating user:", error);
 								alert("Please change email")
 							} else {
-								console.log("Successfully created user account with uid:", userData.Email);
+								console.log("Successfully created user account!");
 								alert("Successfully created user account!")
 								$window.location.href = "login.html";
 							}
@@ -135,7 +152,7 @@ app.controller("signup",['$scope', '$firebaseObject', 'DataObject','$window', fu
 						$scope.$evalAsync();
 					}
 					else{
-						$scope.message = "Enter password and repassword again!";
+						$scope.message = "Repassword Incorrect!";
 					}
 				}
 				else{
@@ -175,29 +192,86 @@ app.controller("breed",['$scope', '$firebaseObject', 'DataObject','$firebase', '
 				$scope.$evalAsync();
 			};
 			
-			$scope.ClickBtnCommit = function(){
-				console.log("num: "+ $scope.num);
+			$scope.ClickBtnCommit = function(){			
+				var ref = new Firebase("https://dogzone.firebaseio.com");
+				var authData = ref.getAuth();
+				//console.log("User ID: " + authData.uid );
 				var ref = new Firebase("https://dogzone.firebaseio.com/"+'breeds/'+$scope.num+'/comments');
-				
-				console.log($scope.comments);
-				console.log($scope.comment);
-				//var sync = $firebase(ref);	
+
 				var mycomment = $scope.comment;
 				$scope.comments = $firebaseArray(ref)
 				var temp = {
-					comment: mycomment 
+					comment: mycomment,
+					email: authData.password.email				
 				};
-				$scope.comments.$add(temp);
-				
-				
-				
+				$scope.comment = "";
+				$scope.comments.$add(temp).then(
+				function(success){
+				  console.log("Comment successfully");
+				}, 
+				function(err){
+					  alert("Error: Comment box is empty!")
+				});			
+			}		
+			
+			
+			$scope.ClickImg1 = function(){
+				var image = document.getElementById("flip1");
+				$("#panel1").slideToggle("fast");
+				if (image.src.match("add")) {
+					image.src = "images/subtract.png";
+				} 
+				else {
+					image.src = "images/add.png";
+				}
 			}
 			
+			$scope.ClickImg2 = function(){
+				var image = document.getElementById("flip2");
+				$("#panel2").slideToggle("fast");
+				if (image.src.match("add")) {
+					image.src = "images/subtract.png";
+				} 
+				else {
+					image.src = "images/add.png";
+				}
+			}	
 			
+			$scope.ClickImg3 = function(){
+				var image = document.getElementById("flip3");
+				$("#panel3").slideToggle("fast");
+				if (image.src.match("add")) {
+					image.src = "images/subtract.png";
+				} 
+				else {
+					image.src = "images/add.png";
+				}
+			}	
+			
+			$scope.ClickImg4 = function(){
+				var image = document.getElementById("flip4");
+				$("#panel4").slideToggle("fast");
+				if (image.src.match("add")) {
+					image.src = "images/subtract.png";
+				} 
+				else {
+					image.src = "images/add.png";
+				}
+			}	
+			
+			$scope.ClickImg5 = function(){
+				var image = document.getElementById("flip5");
+				$("#panel5").slideToggle("fast");
+				if (image.src.match("add")) {
+					image.src = "images/subtract.png";
+				} 
+				else {
+					image.src = "images/add.png";
+				}
+			}	
+				
 		}]);			
 
-
-		
 
 		
 
