@@ -59,21 +59,17 @@ app.controller("login",['$scope', '$firebase', '$firebaseObject', 'DataObject','
 					console.log("User " + authData.uid + " is logged in with " + authData.provider);
 				} else {
 					console.log("User is logged out");
-					alert("Email or Password Incorrect!");
 				}
 				$scope.$evalAsync();
 			};
-			
-			
-			
+					
 			function authHandler(error, authData) {
                 if (error) {
-                    console.log("Login Failed!", error);
-					alert("Email or Password Incorrect!");
+					$scope.message = "Email or password incorrect!";				
                 } else {
                     console.log("Authenticated successfully with payload:", authData);
 					localStorage.setItem("isLoged", true);
-					alert("Log in successfully!");
+					alert("Log in successfully!");					
 					$scope.path = localStorage.getItem("prePage");
 					if($scope.path == '')
 					{
