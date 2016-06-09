@@ -876,6 +876,13 @@ p a:hover {
 	padding-right:350px;
 }
 
+.body .content-project div.figure img.icon{
+	display:block;
+	width: 30px;
+	height: 30px;
+	float: right;
+	padding-right:60px;
+}
 
 .body .content-project div.figure span {
 	background-color:#dd8514;
