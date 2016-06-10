@@ -65,7 +65,7 @@ app.controller("login",['$scope', '$firebase', '$firebaseObject', 'DataObject','
 					
 			function authHandler(error, authData) {
                 if (error) {
-					$scope.message = "Email or password incorrect!";				
+					alert("Email or password incorrect!");		
                 } else {
                     console.log("Authenticated successfully with payload:", authData);
 					localStorage.setItem("isLoged", true);
